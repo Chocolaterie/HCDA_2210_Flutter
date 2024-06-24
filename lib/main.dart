@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'footer.dart';
+import 'header.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,48 +23,20 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class HeaderButton extends StatelessWidget {
-  String label;
-
-  HeaderButton(this.label);
-
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      this.label,
-      style: TextStyle(color: Colors.white),
-    );
-  }
-}
-
-const headerGradient = BoxDecoration(
-    gradient: LinearGradient(
-        colors: [Color(0xFF3e60ac), Color(0xFF55a4e0)]));
-
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          centerTitle: true,
           backgroundColor: Theme.of(context).colorScheme.inversePrimary,
           title: Text("Message"),
         ),
         body: Column(
           children: [
-            Container(
-              decoration: headerGradient,
-              child: Padding(
-                padding: const EdgeInsets.all(20),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    HeaderButton("Nouveau"),
-                    HeaderButton("Accueil"),
-                    HeaderButton("Rechercher"),
-                  ],
-                ),
-              ),
-            )
+            HeaderComponent(),
+            Expanded(child: Text("TODO C'est pour plus tard"),),
+            FooterComponent(),
           ],
         ));
   }
