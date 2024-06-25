@@ -1,14 +1,20 @@
 import 'package:flutter/material.dart';
 
 class HeaderButton extends StatelessWidget {
-  String label;
+  String? iconUrl;
+  String? label;
 
-  HeaderButton(this.label);
+  HeaderButton({this.iconUrl, this.label});
 
   @override
   Widget build(BuildContext context) {
+    // Si icon url (afficher icon button)
+    if (this.iconUrl != null){
+      return IconButton(onPressed: () {}, icon: Image.asset(this.iconUrl!, width: 24,));
+    }
+    // sinon par défaut le text
     return Text(
-      this.label,
+      this.label!,
       style: TextStyle(color: Colors.white),
     );
   }
@@ -28,9 +34,9 @@ class HeaderComponent extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            HeaderButton("Nouveau"),
-            HeaderButton("Accueil"),
-            HeaderButton("Rechercher"),
+            HeaderButton(iconUrl: "images/pencil.png"),
+            HeaderButton(label: "Accueil"),
+            HeaderButton(iconUrl: "images/search.png"),
           ],
         ),
       ),
