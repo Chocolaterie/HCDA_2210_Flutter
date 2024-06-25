@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tp_twitter/app-theme.dart';
 import 'package:tp_twitter/tweet-card.dart';
+import 'auth/login-page.dart';
 import 'footer.dart';
 import 'header.dart';
 
@@ -21,11 +22,13 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
         appBarTheme: AppTheme.appBarTheme,
+        inputDecorationTheme: AppTheme.inputDecorationTheme
       ),
-      home: HomePage(),
+      home: LoginPage(),
     );
   }
 }
+
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
