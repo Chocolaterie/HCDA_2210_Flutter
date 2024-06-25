@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tp_twitter/app-theme.dart';
-import 'package:tp_twitter/tweet-card.dart';
 import 'auth/login-page.dart';
-import 'footer.dart';
-import 'header.dart';
+import 'home/home-page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,31 +22,12 @@ class MyApp extends StatelessWidget {
         appBarTheme: AppTheme.appBarTheme,
         inputDecorationTheme: AppTheme.inputDecorationTheme
       ),
-      home: LoginPage(),
+      initialRoute: '/',
+      routes: {
+        '/' : (context) => LoginPage(),
+        '/messages' : (context) => HomePage(),
+      },
     );
   }
 }
 
-class HomePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          centerTitle: true,
-          title: Text("Message"),
-        ),
-        body: Column(
-          children: [
-            HeaderComponent(),
-            Expanded(
-              child: Column(
-                children: [
-                  TweetCard(),
-                ],
-              ),
-            ),
-            FooterComponent(),
-          ],
-        ));
-  }
-}
