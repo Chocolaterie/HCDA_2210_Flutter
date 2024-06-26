@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
         appBarTheme: AppTheme.appBarTheme,
         inputDecorationTheme: AppTheme.inputDecorationTheme
       ),
-      initialRoute: '/',
+      initialRoute: '/messages',
       routes: {
         '/' : (context) => LoginPage(),
         '/messages' : (context) => HomePage(),

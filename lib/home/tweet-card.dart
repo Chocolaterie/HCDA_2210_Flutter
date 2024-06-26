@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:tp_twitter/home/tweet.dart';
 
 const message =
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris n";
 
 class TweetCard extends StatelessWidget {
+
+  Tweet tweet;
+
+  TweetCard(this.tweet);
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +24,7 @@ class TweetCard extends StatelessWidget {
                 child: Row(
                   children: [
                     Image.network(
-                      "https://avatar.iran.liara.run/public",
+                      tweet.profile,
                       width: 140,
                     ),
                     Expanded(
@@ -31,12 +36,12 @@ class TweetCard extends StatelessWidget {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Text("Shiba@gmail.com", style: TextStyle(fontWeight: FontWeight.w800),),
-                                Text("56s", style: TextStyle(fontWeight: FontWeight.w900, color: Colors.grey),)
+                                Text(tweet.author, style: TextStyle(fontWeight: FontWeight.w800),),
+                                Text(tweet.displayDate(), style: TextStyle(fontWeight: FontWeight.w900, color: Colors.grey),)
                               ],
                             ),
                           ),
-                          Expanded(child: Text(message, overflow: TextOverflow.ellipsis, maxLines: 3,))
+                          Expanded(child: Text(tweet.message, overflow: TextOverflow.ellipsis, maxLines: 3,))
                         ],
                       ),
                     )
