@@ -8,6 +8,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+
   const MyApp({super.key});
 
   // This widget is the root of your application.
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
         appBarTheme: AppTheme.appBarTheme,
         inputDecorationTheme: AppTheme.inputDecorationTheme
       ),
-      initialRoute: '/messages',
+      initialRoute: '/',
       routes: {
         '/' : (context) => LoginPage(),
         '/messages' : (context) => HomePage(),

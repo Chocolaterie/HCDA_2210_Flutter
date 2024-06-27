@@ -7,6 +7,8 @@ import 'dart:convert' as convert;
 import 'package:http/http.dart' as http;
 import 'package:tp_twitter/home/tweet.dart';
 
+import '../auth/auth-context.dart';
+
 class HomePage extends StatefulWidget {
   @override
   State<HomePage> createState() => _HomePageState();
@@ -36,7 +38,7 @@ class _HomePageState extends State<HomePage> {
     // Preparer le header
     final headers =
     {
-      'Authorization': 'Bearer dfIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImlzYWFjQGdtYWlsLmNvbSIsImlhdCI6MTcxOTQwNjgxNiwiZXhwIjoxNzE5NDEwNDE2fQ.AJobIrr6Yb307VOc5KHB5mB1F05mgl-RZu6cw8ih83Q'
+      'Authorization': 'Bearer ${ AuthContext().token }'
     };
 
     // Appeler l'api
