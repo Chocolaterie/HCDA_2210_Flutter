@@ -1,0 +1,19 @@
+{
+  "button-login" : "Se connecter",
+  "button-refresh" : "Rafraichir",
+  "button-fil" : "Fil",
+  "button-notification" : "Notification",
+  "button-message" : "Message",
+  "button-me" : "Moi",
+  "loading-login" : "Tentative de connexion...",
+  "loading-get_tweets" : "Récupération des tweets...",
+  "loading-change-lang" : "Changement de langue",
+  "label-error" : "Erreur",
+  "label-remember_information" : "Mémorisez mes informations",
+  "label-home" : "Accueil",
+  "label-choose-lang": "Changer de langue",
+  "title-login" : "Connexion",
+  "title-message" : "Message",
+  "hint-email" : "Email",
+  "hint-password" : "Password"
+}

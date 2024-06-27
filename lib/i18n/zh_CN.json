@@ -1,0 +1,19 @@
+{
+  "button-login": "登录",
+  "button-refresh": "刷新",
+  "button-fil": "信息流",
+  "button-notification": "通知",
+  "button-message": "消息",
+  "button-me": "我",
+  "loading-login": "正在尝试登录...",
+  "loading-get_tweets": "正在获取推文...",
+  "loading-change-lang" : "切换语言中...",
+  "label-error": "错误",
+  "label-remember_information": "记住我的信息",
+  "label-choose-lang": "切换语言",
+  "label-home": "主页",
+  "title-login": "登录",
+  "title-message": "消息",
+  "hint-email": "电子邮件",
+  "hint-password": "密码"
+}

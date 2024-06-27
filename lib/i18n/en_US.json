@@ -1,0 +1,19 @@
+{
+  "button-login": "Log in",
+  "button-refresh": "Refresh",
+  "button-fil": "Feed",
+  "button-notification": "Notification",
+  "button-message": "Message",
+  "button-me": "Me",
+  "loading-login": "Attempting to log in...",
+  "loading-get_tweets": "Retrieving tweets...",
+  "loading-change-lang" : "Switching language...",
+  "label-error": "Error",
+  "label-remember_information": "Remember my information",
+  "label-home": "Home",
+  "label-choose-lang": "Choose a language",
+  "title-login": "Login",
+  "title-message": "Message",
+  "hint-email": "Email",
+  "hint-password": "Password"
+}

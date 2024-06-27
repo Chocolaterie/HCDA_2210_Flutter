@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:localization/localization.dart';
 import 'package:tp_twitter/app-alert-mgr.dart';
 import 'package:tp_twitter/home/footer.dart';
 import 'package:tp_twitter/home/header.dart';
@@ -27,7 +28,7 @@ class _HomePageState extends State<HomePage> {
     });
 
     // Afficher chargement
-    AppAlertMgr().showProgress(context, "Récupérer des tweets");
+    AppAlertMgr().showProgress(context, "loading-get_tweets".i18n());
 
     // Simuler 1 sec de lag
     await Future.delayed(Duration(seconds: 1));
@@ -57,7 +58,7 @@ class _HomePageState extends State<HomePage> {
           context: context,
           builder: (BuildContext context) {
             return AlertDialog(
-              title: const Text('Erreur'),
+              title: Text('label-error'.i18n()),
               content: Text(json['message'] as String),
             );
           });
@@ -77,7 +78,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          title: Text("Message"),
+          title: Text("title-message".i18n()),
         ),
         body: Column(
           children: [
@@ -93,7 +94,7 @@ class _HomePageState extends State<HomePage> {
                           onPressed: () => callApi(context),
                           child: Padding(
                             padding: const EdgeInsets.all(15.0),
-                            child: Text("Rafraichir"),
+                            child: Text("button-refresh".i18n()),
                           ),
                         ),
                       )),

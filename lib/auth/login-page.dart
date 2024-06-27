@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:localization/localization.dart';
 import 'package:tp_twitter/app-theme.dart';
 import 'dart:convert' as convert;
 import 'package:http/http.dart' as http;
 import '../app-alert-mgr.dart';
+import '../app-lang-dialog.dart';
 import '../app-validators.dart';
 import 'auth-context.dart';
 
@@ -13,7 +15,7 @@ class LoginPage extends StatelessWidget {
 
   void callApi(BuildContext context) async {
     // Afficher chargement
-    AppAlertMgr().showProgress(context, "Tentative de connexion...");
+    AppAlertMgr().showProgress(context, 'loading-login'.i18n());
 
     // Simuler 1 sec de lag
     await Future.delayed(Duration(seconds: 1));
@@ -50,7 +52,7 @@ class LoginPage extends StatelessWidget {
           context: context,
           builder: (BuildContext context) {
             return AlertDialog(
-              title: const Text('Erreur'),
+              title: Text('label-error'.i18n()),
               content: Text(json['message'] as String),
             );
           });
@@ -75,12 +77,21 @@ class LoginPage extends StatelessWidget {
     }
   }
 
+  void showLangDialog(BuildContext context){
+    showDialog(context: context, builder: (BuildContext context) {
+      return AppLangDialog();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          title: Text("Conexion"),
+          title: Text("title-login".i18n()),
+          actions: [
+            IconButton(onPressed: () => showLangDialog(context), icon: const Icon(Icons.language))
+          ],
         ),
         body: Stack(
           fit: StackFit.expand,
@@ -104,26 +115,26 @@ class LoginPage extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.all(20),
                       child: Text(
-                        "Connexion",
+                        'title-login'.i18n(),
                         style: TextStyle(color: Colors.white, fontSize: 26),
                       ),
                     ),
                     AppTheme.wrapFormPadding(TextFormField(
                       controller: emailController,
                       validator: AppValidator.validateEmail,
-                      decoration: InputDecoration(labelText: "Email"),
+                      decoration: InputDecoration(labelText: "hint-email".i18n()),
                     )),
                     AppTheme.wrapFormPadding(TextFormField(
                       controller: passwordController,
                       validator: AppValidator.validatePassword,
-                      decoration: InputDecoration(labelText: "Mot de passe"),
+                      decoration: InputDecoration(labelText: "hint-password".i18n()),
                       obscureText: true,
                     )),
                     AppTheme.wrapFormPadding(Row(
                       children: [
                         Switch(value: false, onChanged: (value) {}),
                         Text(
-                          "Mémorisez mes informations",
+                          "label-remember_information".i18n(),
                           style: TextStyle(color: Colors.white),
                         )
                       ],
@@ -134,7 +145,7 @@ class LoginPage extends StatelessWidget {
                             onPressed: () => onSubmit(context),
                             child: Padding(
                               padding: const EdgeInsets.all(15),
-                              child: Text("Se connecter"),
+                              child: Text("button-login".i18n()),
                             )))
                   ],
                 ),

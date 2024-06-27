@@ -35,6 +35,9 @@ dependencies:
   email_validator: ^3.0.0
   http: ^1.2.1
   sn_progress_dialog: ^1.1.4
+  flutter_localizations:
+    sdk: flutter
+  localization: ^2.1.1
 
 dev_dependencies:
   flutter_test:
@@ -56,6 +59,7 @@ flutter:
 
   assets:
     - assets/
+    - lib/i18n/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

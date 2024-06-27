@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:localization/localization.dart';
 
 class HeaderButton extends StatelessWidget {
   String? iconUrl;
@@ -35,7 +36,7 @@ class HeaderComponent extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             HeaderButton(iconUrl: "images/pencil.png"),
-            HeaderButton(label: "Accueil"),
+            HeaderButton(label: "label-home".i18n()),
             HeaderButton(iconUrl: "images/search.png"),
           ],
         ),

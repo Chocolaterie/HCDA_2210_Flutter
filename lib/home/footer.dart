@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:localization/localization.dart';
 
 class FooterComponent extends StatelessWidget {
   @override
@@ -8,10 +9,10 @@ class FooterComponent extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          Text("Fil", style: TextStyle(color: Colors.blue),),
-          Text("Notification", style: TextStyle(color: Color(0xFF707070))),
-          Text("Message", style: TextStyle(color: Color(0xFF707070))),
-          Text("Moi", style: TextStyle(color: Color(0xFF707070))),
+          Text("button-fil".i18n(), style: TextStyle(color: Colors.blue),),
+          Text("button-notification".i18n(), style: TextStyle(color: Color(0xFF707070))),
+          Text("button-message".i18n(), style: TextStyle(color: Color(0xFF707070))),
+          Text("button-me".i18n(), style: TextStyle(color: Color(0xFF707070))),
         ],),
     );
   }

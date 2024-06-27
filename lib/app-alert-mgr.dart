@@ -12,7 +12,7 @@ class AppAlertMgr {
 
   ProgressDialog? pd;
 
-  void showProgress(BuildContext context, String message){
+  void showProgress(BuildContext context, String message, {Color barrierColor = const Color(0x77000000)}){
     pd = ProgressDialog(context: context);
 
     // Display progress
@@ -20,7 +20,7 @@ class AppAlertMgr {
     msg: message,
     progressBgColor: Colors.transparent,
     elevation: 10.0,
-    barrierColor: Color(0x77000000));
+    barrierColor: barrierColor);
   }
 
   void closeProgress(){
